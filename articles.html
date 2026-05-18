@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles | Sahil Jangra - Premium Web Insights</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore insightful articles on web development, UI/UX design, and digital growth by Sahil Jangra.">
+    <meta name="keywords" content="Web Development Blog, Sahil Jangra Articles, UI/UX Insights, Tech Blog">
+    <meta name="author" content="Sahil Jangra">
+    <link rel="icon" type="image/png" href="assets/icons/pre-load.png">
+
+    <!-- Preload Assets -->
+    <link rel="preload" as="image" href="assets/icons/pre-load.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sahil.top/articles.html">
+    <meta property="og:title" content="Articles | Sahil Jangra - Premium Web Insights">
+    <meta property="og:description" content="Explore insightful articles on web development, UI/UX design, and digital growth.">
+    <meta property="og:image" content="https://sahil.top/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sahil.top/articles.html">
+    <meta property="twitter:title" content="Articles | Sahil Jangra - Premium Web Insights">
+    <meta property="twitter:description" content="Explore insightful articles on web development, UI/UX design, and digital growth.">
+    <meta property="twitter:image" content="https://sahil.top/assets/images/og-image.jpg">
+
+    <!-- Google Tags (Placeholder) -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#4f46e5',
+                        dark: '#050505',
+                        surface: '#0a0a0a',
+                        accent: '#0ea5e9',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-slate-200 selection:bg-primary selection:text-white overflow-x-hidden">
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 z-0 bg-grid-pattern pointer-events-none opacity-20"></div>
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none opacity-30 z-0"></div>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-32 pb-24">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="mb-16 reveal">
+                <a href="index.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-8 group">
+                    <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform"></i> Back to Home
+                </a>
+                <h1 class="font-display text-5xl md:text-7xl font-bold mb-6">Latest <span class="text-primary">Articles.</span></h1>
+                <p class="text-xl text-slate-400 max-w-2xl">Sharing my thoughts and experiences on the future of the web.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article Card 1 -->
+                <article class="glass-card overflow-hidden group reveal">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Web Design Trends" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-4 mb-4 text-xs font-bold uppercase tracking-widest text-primary">
+                            <span>May 18, 2026</span>
+                            <span>•</span>
+                            <span>Development</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Modern Web Design Trends for 2026</h3>
+                        <p class="text-slate-400 mb-6 line-clamp-2">Discover the latest shifts in digital aesthetics and how to implement them in your projects.</p>
+                        <a href="articles/modern-web-design-2026.html" class="inline-flex items-center gap-2 font-bold text-white group/btn">
+                            Read Full Article <i class="fas fa-arrow-right text-primary group-hover/btn:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- More article cards can be added here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Navigation (Bottom Pill) -->
+    <header class="fixed bottom-8 left-0 right-0 z-50 flex justify-center px-4">
+        <nav class="bg-surface/80 backdrop-blur-2xl border border-white/10 rounded-full px-6 py-3 flex items-center justify-between gap-8 shadow-2xl w-full max-w-4xl">
+            <a href="index.html" class="text-xl font-bold font-display tracking-tight text-white group shrink-0">
+                SAHIL<span class="text-primary group-hover:text-secondary transition-colors">.TOP</span>
+            </a>
+            <ul class="hidden lg:flex items-center gap-6 text-[13px] font-bold uppercase tracking-wider">
+                <li><a href="index.html#home" class="nav-link text-slate-400 hover:text-white transition-colors">Home</a></li>
+                <li><a href="index.html#about" class="nav-link text-slate-400 hover:text-white transition-colors">About</a></li>
+                <li><a href="articles.html" class="nav-link text-white transition-colors">Articles</a></li>
+            </ul>
+            <a href="index.html#contact" class="px-5 py-2 bg-white text-black rounded-full text-xs font-black hover:bg-primary hover:text-white transition-all uppercase tracking-tighter">Hire Me</a>
+        </nav>
+    </header>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

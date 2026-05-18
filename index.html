@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<!-- 
+    Handcrafted with care by Sahil Jangra
+    Website: sahil.top
+    "Code is like humor. When you have to explain it, it’s bad."
+-->
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Jangra | Premium Web Developer & Digital Agency</title>
+    <meta name="description" content="Expert web developer building high-performance websites for businesses and startups. Portfolio, services, and client-focused solutions by Sahil Jangra.">
+    <meta name="keywords" content="Sahil Jangra, Web Developer, Digital Agency, Freelance Developer, UI/UX Designer, Tailwind CSS, Portfolio">
+    <meta name="author" content="Sahil Jangra">
+    <link rel="icon" type="image/png" href="assets/icons/pre-load.png">
+
+    <!-- Preload Assets -->
+    <link rel="preload" as="image" href="assets/icons/pre-load.png">
+    <link rel="preload" as="image" href="assets/images/photo1.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#4f46e5',
+                        dark: '#050505',
+                        surface: '#0a0a0a',
+                        accent: '#0ea5e9',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spin 15s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-slate-200 selection:bg-primary selection:text-white overflow-x-hidden">
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 z-0 bg-grid-pattern pointer-events-none opacity-20"></div>
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none opacity-30 z-0"></div>
+
+    <!-- Navigation -->
+    <header class="fixed bottom-8 left-0 right-0 z-50 flex justify-center px-4">
+        <nav class="bg-surface/80 backdrop-blur-2xl border border-white/10 rounded-full px-6 py-3 flex items-center justify-between gap-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 w-full max-w-4xl hover:border-primary/30">
+            <a href="#" class="text-xl font-bold font-display tracking-tight text-white group shrink-0">
+                SAHIL<span class="text-primary group-hover:text-secondary transition-colors">.TOP</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex items-center gap-6 text-[13px] font-bold uppercase tracking-wider">
+                <li><a href="#home" class="nav-link text-slate-400 hover:text-white transition-colors">Home</a></li>
+                <li><a href="#about" class="nav-link text-slate-400 hover:text-white transition-colors">About</a></li>
+                <li><a href="#services" class="nav-link text-slate-400 hover:text-white transition-colors">Services</a></li>
+                <li><a href="#portfolio" class="nav-link text-slate-400 hover:text-white transition-colors">Projects</a></li>
+                <li><a href="articles.html" class="nav-link text-slate-400 hover:text-white transition-colors">Articles</a></li>
+            </ul>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:block px-5 py-2 bg-white text-black rounded-full text-xs font-black hover:bg-primary hover:text-white transition-all transform hover:scale-105 uppercase tracking-tighter">Hire Me</a>
+                
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2 focus:outline-none bg-white/5 rounded-full border border-white/10">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
+        <button id="close-menu" class="absolute top-8 right-8 text-white/50 hover:text-white">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        <a href="#home" class="text-3xl font-display font-bold hover:text-primary transition-colors mobile-link">Home</a>
+        <a href="#about" class="text-3xl font-display font-bold hover:text-primary transition-colors mobile-link">About</a>
+        <a href="#services" class="text-3xl font-display font-bold hover:text-primary transition-colors mobile-link">Services</a>
+        <a href="#portfolio" class="text-3xl font-display font-bold hover:text-primary transition-colors mobile-link">Projects</a>
+        <a href="articles.html" class="text-3xl font-display font-bold hover:text-primary transition-colors mobile-link">Articles</a>
+        <a href="#contact" class="text-3xl font-display font-bold hover:text-primary transition-colors mobile-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-0 overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="text-center lg:text-left reveal">
+                    <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl mb-10 group cursor-default">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 group-hover:text-white transition-colors">Available for New Projects</span>
+                    </div>
+
+                    <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8">
+                        Elevating Brands Through <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary animate-gradient-x">Premium Web Dev.</span>
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed">
+                        I'm Sahil Jangra, a freelance web developer crafting high-performance, conversion-focused websites for businesses and personal brands globally.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-12">
+                        <a href="#contact" class="px-8 py-4 bg-primary text-white rounded-full font-bold text-base hover:bg-secondary transition-all transform hover:scale-105 shadow-xl shadow-primary/30">
+                            Hire Me <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#portfolio" class="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold text-base hover:bg-white/10 transition-all">
+                            View Projects
+                        </a>
+                        <a href="assets/resume/SahilJangraResume.pdf" target="_blank" class="px-8 py-4 bg-transparent border border-white/10 text-white rounded-full font-bold text-base hover:border-primary transition-all">
+                            Download Resume
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="relative flex items-center justify-center reveal -mt-20 lg:-mt-32 lg:-ml-20">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-full blur-[100px] animate-pulse-slow"></div>
+                    <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-white/5 shadow-2xl animate-float z-10 group">
+                        <img src="assets/images/photo1.jpg" alt="Sahil Jangra" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <!-- Floating Tech Icons -->
+                    <div class="absolute -top-6 -right-6 md:-top-10 md:-right-10 w-12 h-12 md:w-20 md:h-20 bg-surface/80 backdrop-blur-xl border border-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-xl md:text-3xl text-primary animate-bounce shadow-2xl z-20">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="absolute bottom-6 -left-6 md:bottom-10 md:-left-10 w-10 h-10 md:w-16 md:h-16 bg-surface/80 backdrop-blur-xl border border-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-lg md:text-2xl text-accent animate-float [animation-delay:2s] shadow-2xl z-20">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="absolute -bottom-2 -right-2 md:-bottom-5 md:-right-5 w-10 h-10 md:w-14 md:h-14 bg-surface/80 backdrop-blur-xl border border-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-lg md:text-xl text-[#E34F26] animate-bounce [animation-delay:1s] shadow-2xl z-20">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="absolute top-6 -left-6 md:top-10 md:-left-16 w-10 h-10 md:w-14 md:h-14 bg-surface/80 backdrop-blur-xl border border-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-lg md:text-xl text-[#1572B6] animate-float [animation-delay:3s] shadow-2xl z-20">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <div class="hidden sm:flex absolute top-1/2 -right-8 md:-right-12 w-12 h-12 md:w-16 md:h-16 bg-surface/80 backdrop-blur-xl border border-white/10 rounded-xl md:rounded-2xl items-center justify-center text-xl md:text-2xl text-[#06B6D4] animate-bounce [animation-delay:1.5s] shadow-2xl z-20">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <div class="absolute -top-10 left-1/2 -translate-x-1/2 md:-top-12 md:left-20 md:translate-x-0 w-10 h-10 md:w-14 md:h-14 bg-surface/80 backdrop-blur-xl border border-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-lg md:text-xl text-white animate-float [animation-delay:0.5s] shadow-2xl z-20">
+                        <i class="fab fa-github"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Services Unified Section -->
+    <section id="about" class="py-32 relative z-10 overflow-hidden">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <!-- About Me Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-40">
+                <div class="reveal">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+                        Expertise & Vision
+                    </div>
+                    <h2 class="font-display text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                        Crafting Digital <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">Masterpieces.</span>
+                    </h2>
+                    <p class="text-xl text-slate-400 leading-relaxed mb-10">
+                        I am Sahil Jangra, a freelance website developer focused on helping businesses establish a strong and professional online presence. I build modern, responsive websites that are easy to use, load fast, and convert visitors into customers.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mb-10">
+                        <div>
+                            <h4 class="text-white font-bold text-2xl mb-1">50+</h4>
+                            <p class="text-slate-500 text-sm uppercase tracking-wider">Projects</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-2xl mb-1">30+</h4>
+                            <p class="text-slate-500 text-sm uppercase tracking-wider">Clients</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-2xl mb-1">2+ Years</h4>
+                            <p class="text-slate-500 text-sm uppercase tracking-wider">Experience</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm font-medium hover:bg-white/10 transition-colors">US-Friendly Collaboration</span>
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm font-medium hover:bg-white/10 transition-colors">Clear Communication</span>
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm font-medium hover:bg-white/10 transition-colors">Satisfaction Guarantee</span>
+                    </div>
+                </div>
+
+                <div class="relative reveal">
+                    <div class="aspect-square rounded-3xl overflow-hidden glass-card p-4 relative group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <img src="assets/images/photo1.jpg" alt="Sahil Jangra" class="w-full h-full object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-700">
+                        
+                        <!-- Floating Stats -->
+                        <div class="absolute -bottom-6 -right-6 glass-card p-6 shadow-2xl animate-float">
+                            <p class="text-xs uppercase tracking-widest text-slate-500 mb-1">Based in</p>
+                            <h4 class="text-white font-bold mb-3">Hisar, India</h4>
+                            <div class="h-px w-full bg-white/10 mb-3"></div>
+                            <p class="text-xs uppercase tracking-widest text-slate-500 mb-1">Local Time</p>
+                            <p id="local-time" class="text-2xl font-display font-bold text-primary">00:00:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Services Header -->
+            <div id="services" class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal">
+                <div class="max-w-2xl">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold uppercase tracking-widest mb-6">
+                        Solutions
+                    </div>
+                    <h2 class="font-display text-4xl md:text-6xl font-bold mb-4">Premium Services <span class="text-primary">.</span></h2>
+                    <p class="text-slate-400 text-lg">High-performance digital products built for scale.</p>
+                </div>
+                <a href="#contact" class="px-8 py-4 bg-white text-black rounded-full font-bold hover:bg-primary hover:text-white transition-all transform hover:scale-105 shadow-xl shadow-white/5">
+                    Start a Project
+                </a>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="glass-card p-10 spotlight-card hover:border-primary/50 transition-all duration-500 group reveal">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-3xl text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Business Websites</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Professional 1–5 page websites that showcase your brand and drive inquiries. Optimized for high-growth businesses.</p>
+                    <div class="flex items-center text-sm font-bold text-primary group-hover:gap-3 transition-all">
+                        LEARN MORE <i class="fas fa-arrow-right ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-10 spotlight-card hover:border-accent/50 transition-all duration-500 group reveal">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-3xl text-accent mb-8 group-hover:bg-accent group-hover:text-white transition-all">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Conversion Pages</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Lead and sales-focused pages built for performance marketing and aggressive conversion rates.</p>
+                    <div class="flex items-center text-sm font-bold text-accent group-hover:gap-3 transition-all">
+                        LEARN MORE <i class="fas fa-arrow-right ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-10 spotlight-card hover:border-secondary/50 transition-all duration-500 group reveal">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-3xl text-secondary mb-8 group-hover:bg-secondary group-hover:text-white transition-all">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Website Redesign</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Modernizing outdated digital presences with fresh visuals, improved UX, and better core vitals.</p>
+                    <div class="flex items-center text-sm font-bold text-secondary group-hover:gap-3 transition-all">
+                        LEARN MORE <i class="fas fa-arrow-right ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                </div>
+
+                <!-- Additional Service 1 -->
+                <div class="glass-card p-10 spotlight-card hover:border-green-500/50 transition-all duration-500 group reveal">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-3xl text-green-500 mb-8 group-hover:bg-green-500 group-hover:text-white transition-all">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Mobile-First Design</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Ensuring a seamless and ultra-fast experience across smartphones, tablets, and desktops.</p>
+                </div>
+
+                <!-- Additional Service 2 -->
+                <div class="glass-card p-10 spotlight-card hover:border-yellow-500/50 transition-all duration-500 group reveal">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-3xl text-yellow-500 mb-8 group-hover:bg-yellow-500 group-hover:text-white transition-all">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Speed Audit</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Performance deep-dives for faster load times, better Google rankings, and user retention.</p>
+                </div>
+
+                <!-- Additional Service 3 -->
+                <div class="glass-card p-10 spotlight-card hover:border-purple-500/50 transition-all duration-500 group reveal">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-3xl text-purple-500 mb-8 group-hover:bg-purple-500 group-hover:text-white transition-all">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">SEO & Deployment</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">End-to-end support from domain selection to hosting and search engine visibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education (From KRYZO) -->
+    <section id="experience" class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Experience -->
+                <div class="reveal">
+                    <h2 class="font-display text-4xl font-bold mb-12">Professional Experience</h2>
+                    <div class="space-y-8 border-l border-white/10 ml-4 pl-8">
+                        <div class="relative group">
+                            <span class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-dark group-hover:scale-150 group-hover:bg-white transition-all duration-300"></span>
+                            <div class="mb-1 text-primary font-bold text-sm uppercase tracking-widest group-hover:translate-x-2 transition-transform">05/2024 - Present</div>
+                            <h4 class="text-xl font-bold group-hover:text-primary transition-colors">Freelance Technical Associate</h4>
+                            <p class="text-slate-500 text-sm mb-4">GG MOUSE PRO 2 (Shenzhen / Remote)</p>
+                            <p class="text-slate-400">Collaborated with teams to troubleshoot, test, and enhance application performance. Focused on delivering bug-free, user-friendly experiences.</p>
+                        </div>
+                        <div class="relative group">
+                            <span class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-dark group-hover:scale-150 group-hover:bg-primary transition-all duration-300"></span>
+                            <div class="mb-1 text-slate-500 font-bold text-sm uppercase tracking-widest group-hover:translate-x-2 transition-transform">04/2023 - 04/2024</div>
+                            <h4 class="text-xl font-bold group-hover:text-primary transition-colors">Frontend Developer (Projects)</h4>
+                            <p class="text-slate-500 text-sm mb-4">Self / Personal Projects</p>
+                            <p class="text-slate-400">Built and refined various frontend projects with a strong focus on responsive layouts and interactive web apps.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="reveal">
+                    <h2 class="font-display text-4xl font-bold mb-12">Education</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="glass-card p-6">
+                            <div class="text-primary font-bold text-xs mb-2">2024 - Present</div>
+                            <h4 class="font-bold">Bachelor of Arts</h4>
+                            <p class="text-slate-500 text-sm">Dayanand College, Hisar</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <div class="text-primary font-bold text-xs mb-2">2023 - 2024</div>
+                            <h4 class="font-bold">DCA Diploma</h4>
+                            <p class="text-slate-500 text-sm">HARTRON, Hisar</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <div class="text-primary font-bold text-xs mb-2">2022 - 2023</div>
+                            <h4 class="font-bold">12th (HBSE)</h4>
+                            <p class="text-slate-500 text-sm">Sant & Hari School</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <div class="text-primary font-bold text-xs mb-2">2020 - 2021</div>
+                            <h4 class="font-bold">10th (CBSE)</h4>
+                            <p class="text-slate-500 text-sm">New Kashi School</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <h2 class="font-display text-4xl font-bold mb-12 text-center reveal">Tech Stack <span class="text-primary">&</span> Tools</h2>
+            
+            <div class="flex flex-wrap justify-center gap-4 reveal">
+                <div class="px-6 py-3 bg-white/5 border border-white/10 rounded-full flex items-center gap-3 hover:bg-primary/20 hover:border-primary/50 transition-all cursor-default">
+                    <i class="fab fa-html5 text-[#E34F26]"></i>
+                    <span class="font-bold">HTML5</span>
+                </div>
+                <div class="px-6 py-3 bg-white/5 border border-white/10 rounded-full flex items-center gap-3 hover:bg-primary/20 hover:border-primary/50 transition-all cursor-default">
+                    <i class="fab fa-css3-alt text-[#1572B6]"></i>
+                    <span class="font-bold">CSS3</span>
+                </div>
+                <div class="px-6 py-3 bg-white/5 border border-white/10 rounded-full flex items-center gap-3 hover:bg-primary/20 hover:border-primary/50 transition-all cursor-default">
+                    <i class="fab fa-js text-[#F7DF1E]"></i>
+                    <span class="font-bold">JavaScript</span>
+                </div>
+                <div class="px-6 py-3 bg-white/5 border border-white/10 rounded-full flex items-center gap-3 hover:bg-primary/20 hover:border-primary/50 transition-all cursor-default">
+                    <i class="fab fa-react text-[#61DAFB]"></i>
+                    <span class="font-bold">React.js</span>
+                </div>
+                <div class="px-6 py-3 bg-white/5 border border-white/10 rounded-full flex items-center gap-3 hover:bg-primary/20 hover:border-primary/50 transition-all cursor-default">
+                    <i class="fas fa-wind text-[#06B6D4]"></i>
+                    <span class="font-bold">Tailwind CSS</span>
+                </div>
+                <div class="px-6 py-3 bg-white/5 border border-white/10 rounded-full flex items-center gap-3 hover:bg-primary/20 hover:border-primary/50 transition-all cursor-default">
+                    <i class="fab fa-github text-white"></i>
+                    <span class="font-bold">GitHub</span>
+                </div>
+                <div class="px-6 py-3 bg-white/5 border border-white/10 rounded-full flex items-center gap-3 hover:bg-primary/20 hover:border-primary/50 transition-all cursor-default">
+                    <i class="fas fa-search text-accent"></i>
+                    <span class="font-bold">SEO Optimization</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 relative z-10">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal">
+                <div>
+                    <h2 class="font-display text-4xl md:text-6xl font-bold mb-4">Completed Projects <span class="text-primary">.</span></h2>
+                    <p class="text-slate-400">A showcase of successfully delivered projects, built with precision and modern tech.</p>
+                </div>
+                <div class="flex gap-4" id="portfolio-filters">
+                    <button class="filter-btn active px-6 py-2 rounded-full border border-white/10 hover:border-primary transition-all text-sm font-bold" data-filter="all">All</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-white/10 hover:border-primary transition-all text-sm font-bold" data-filter="dev">Development</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-white/10 hover:border-primary transition-all text-sm font-bold" data-filter="design">UI/UX</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12" id="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-item group reveal" data-category="dev">
+                    <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 border border-white/10">
+                        <img src="assets/images/Cleveroad.jpg" alt="GG Mouse Pro" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                            <a href="https://ggmousepro-in.vercel.app/" target="_blank" class="px-6 py-3 bg-white text-black rounded-full font-bold">View Live Site</a>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">GG Mouse Pro</h3>
+                    <p class="text-slate-400">High-precision gaming utility website for Android mapping.</p>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-item group reveal" data-category="dev">
+                    <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 border border-white/10">
+                        <img src="assets/images/Game Dashboard Design.jpg" alt="YT Thumbnail Grabber" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                            <a href="https://chitar.vercel.app" target="_blank" class="px-6 py-3 bg-white text-black rounded-full font-bold">View Live Site</a>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">YT Thumbnail Grabber</h3>
+                    <p class="text-slate-400">Sleek web application for instant YouTube thumbnail downloads.</p>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-item group reveal" data-category="design">
+                    <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 border border-white/10">
+                        <img src="assets/images/Capture d'écran 2025-10-22 182207.png" alt="Developer Portfolio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                            <a href="https://dilawar-info.vercel.app" target="_blank" class="px-6 py-3 bg-white text-black rounded-full font-bold">View Live Site</a>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">Expert Portfolio</h3>
+                    <p class="text-slate-400">Premium portfolio for Python & Security experts.</p>
+                </article>
+
+                <!-- Project 4 (From US-CLIENT) -->
+                <article class="project-item group reveal" data-category="dev">
+                    <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 border border-white/10 bg-surface flex items-center justify-center">
+                        <div class="text-center p-8">
+                            <h4 class="text-xl font-bold mb-4">Campus Ka Jaika</h4>
+                            <p class="text-sm text-slate-500 mb-6">Clean, modern restaurant website for local engagement.</p>
+                            <a href="https://campus-ka-jaika.vercel.app/" target="_blank" class="px-6 py-2 bg-primary text-white rounded-full text-sm font-bold">View Project</a>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">Campus Ka Jaika</h3>
+                    <p class="text-slate-400">Restaurant & Local Business Solutions.</p>
+                </article>
+
+                <!-- Project 5 (Fresher Project: Weather App) -->
+                <article class="project-item group reveal" data-category="dev">
+                    <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 border border-white/10 bg-surface flex items-center justify-center">
+                        <div class="text-center p-8">
+                            <i class="fas fa-cloud-sun text-5xl text-primary mb-6"></i>
+                            <h4 class="text-xl font-bold mb-4">SkyCast Weather App</h4>
+                            <p class="text-sm text-slate-500 mb-6">Real-time weather updates using OpenWeather API and interactive maps.</p>
+                            <a href="#" class="px-6 py-2 bg-primary text-white rounded-full text-sm font-bold">View Demo</a>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">SkyCast Weather</h3>
+                    <p class="text-slate-400">Utility • API Integration</p>
+                </article>
+
+                <!-- Project 6 (Fresher Project: Task Manager) -->
+                <article class="project-item group reveal" data-category="dev">
+                    <div class="relative aspect-video rounded-3xl overflow-hidden mb-6 border border-white/10 bg-surface flex items-center justify-center">
+                        <div class="text-center p-8">
+                            <i class="fas fa-tasks text-5xl text-accent mb-6"></i>
+                            <h4 class="text-xl font-bold mb-4">FocusFlow To-Do</h4>
+                            <p class="text-sm text-slate-500 mb-6">Premium task manager with drag-and-drop, local storage, and dark mode.</p>
+                            <a href="#" class="px-6 py-2 bg-accent text-white rounded-full text-sm font-bold">View Demo</a>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">FocusFlow Manager</h3>
+                    <p class="text-slate-400">Productivity • Application</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-surface/30 relative">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-6xl font-bold mb-4">Transparent Pricing <span class="text-primary">.</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Flexible packages designed to scale with your business needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic -->
+                <div class="glass-card p-8 border-t-4 border-slate-500 reveal">
+                    <h3 class="text-xl font-bold mb-2">Basic Website</h3>
+                    <div class="text-4xl font-display font-bold mb-4">$80 <span class="text-sm text-slate-500 font-normal">Starting at</span></div>
+                    <p class="text-slate-400 text-sm mb-8">Perfect for personal brands and single-page portfolios.</p>
+                    <ul class="space-y-4 mb-8 text-sm">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Single Page Design</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Basic SEO Setup</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Contact Form</li>
+                    </ul>
+                    <a href="#contact" class="block text-center py-3 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all font-bold">Choose Basic</a>
+                </div>
+
+                <!-- Business (Popular) -->
+                <div class="glass-card p-8 border-t-4 border-primary relative transform scale-105 shadow-2xl reveal">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">Most Popular</div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Business Website</h3>
+                    <div class="text-4xl font-display font-bold mb-4 text-white">$150 <span class="text-sm text-slate-500 font-normal">Starting at</span></div>
+                    <p class="text-slate-400 text-sm mb-8">Ideal for startups and established small businesses.</p>
+                    <ul class="space-y-4 mb-8 text-sm text-white/80">
+                        <li><i class="fas fa-check text-primary mr-2"></i> Up to 5 Pages</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i> Custom Visual Design</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i> Advanced SEO Setup</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i> Performance Optimization</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i> Domain & Hosting Help</li>
+                    </ul>
+                    <a href="#contact" class="block text-center py-3 bg-primary text-white rounded-full hover:bg-secondary transition-all font-bold shadow-lg shadow-primary/20">Get Started</a>
+                </div>
+
+                <!-- Landing Page -->
+                <div class="glass-card p-8 border-t-4 border-accent reveal">
+                    <h3 class="text-xl font-bold mb-2">Landing Page</h3>
+                    <div class="text-4xl font-display font-bold mb-4">$60 <span class="text-sm text-slate-500 font-normal">Starting at</span></div>
+                    <p class="text-slate-400 text-sm mb-8">Built specifically for lead generation and ad campaigns.</p>
+                    <ul class="space-y-4 mb-8 text-sm">
+                        <li><i class="fas fa-check text-accent mr-2"></i> Conversion-First Layout</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i> Ultra-Fast Load Speed</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i> CTA Optimization</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i> Analytics Setup</li>
+                    </ul>
+                    <a href="#contact" class="block text-center py-3 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all font-bold">Order Now</a>
+                </div>
+            </div>
+            <p class="text-center mt-12 text-slate-500 text-sm">Custom pricing available based on project scope. <a href="#contact" class="text-primary hover:underline">Request a quote</a></p>
+        </div>
+    </section>
+
+    <!-- Why Choose Me -->
+    <section class="py-24 relative">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="font-display text-4xl md:text-6xl font-bold mb-8">Why Work With Me?</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Clear Communication</h4>
+                                <p class="text-slate-400">Professional, transparent updates and US-friendly collaboration across all time zones.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 shrink-0 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-xl">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Reliable Delivery</h4>
+                                <p class="text-slate-400">Strict adherence to deadlines with quality-focused execution. No excuses, just results.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 shrink-0 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary text-xl">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Satisfaction Guarantee</h4>
+                                <p class="text-slate-400">I'm not happy until you are. Unlimited revisions within scope to ensure your vision comes to life.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-12 reveal relative overflow-hidden">
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/20 blur-[100px] rounded-full"></div>
+                    <h3 class="text-3xl font-display font-bold mb-8">Client Benefits</h3>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <span class="text-4xl font-display font-bold text-white mb-2 block">100%</span>
+                            <p class="text-xs uppercase tracking-widest text-slate-500">Mobile Responsive</p>
+                        </div>
+                        <div>
+                            <span class="text-4xl font-display font-bold text-white mb-2 block">99+</span>
+                            <p class="text-xs uppercase tracking-widest text-slate-500">PageSpeed Score</p>
+                        </div>
+                        <div>
+                            <span class="text-4xl font-display font-bold text-white mb-2 block">24/7</span>
+                            <p class="text-xs uppercase tracking-widest text-slate-500">Priority Support</p>
+                        </div>
+                        <div>
+                            <span class="text-4xl font-display font-bold text-white mb-2 block">SEO</span>
+                            <p class="text-xs uppercase tracking-widest text-slate-500">Optimized Structure</p>
+                        </div>
+                    </div>
+                    <div class="mt-12 p-6 bg-white/5 border border-white/10 rounded-2xl italic text-slate-400">
+                        "Sahil provided exceptional service and delivered our project ahead of schedule. His attention to detail is unmatched."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-surface/50">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-16 text-center reveal">Client Stories <span class="text-primary">.</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+                <div class="glass-card p-10 relative group">
+                    <i class="fas fa-quote-left text-primary/20 text-5xl absolute top-8 left-8 group-hover:text-primary/40 transition-colors"></i>
+                    <div class="relative z-10 pl-4 border-l-2 border-primary/20 group-hover:border-primary transition-colors">
+                        <p class="text-lg text-slate-300 italic mb-8">
+                            “Sahil doesn't just write code—he thinks about the end user. The final product exceeded our expectations, delivering both performance and great design.”
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-slate-800 rounded-full overflow-hidden border border-white/10">
+                                <img src="https://images.pexels.com/photos/8046501/pexels-photo-8046501.jpeg" alt="James Wilson" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">James Wilson</h4>
+                                <p class="text-xs text-slate-500 uppercase tracking-widest">CEO, Tech Innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-10 relative group">
+                    <i class="fas fa-quote-left text-primary/20 text-5xl absolute top-8 left-8 group-hover:text-primary/40 transition-colors"></i>
+                    <div class="relative z-10 pl-4 border-l-2 border-primary/20 group-hover:border-primary transition-colors">
+                        <p class="text-lg text-slate-300 italic mb-8">
+                            “Working with Sahil was an absolute pleasure. His development skills are top-notch, and he deeply understands user needs. Our app's engagement increased significantly.”
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-slate-800 rounded-full overflow-hidden border border-white/10">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Sarah Jenkins" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Sarah Jenkins</h4>
+                                <p class="text-xs text-slate-500 uppercase tracking-widest">Founder, Artistry Digital</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 relative">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="font-display text-4xl font-bold mb-12 text-center reveal">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4 reveal">
+                <div class="faq-item glass-card p-6 cursor-pointer group">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold">How long does it take to build a website?</h4>
+                        <i class="fas fa-chevron-down text-slate-500 group-hover:text-primary transition-all"></i>
+                    </div>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="pt-4 text-slate-400">A basic website usually takes 3-7 days, while complex business sites can take 2-3 weeks depending on requirements and content availability.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card p-6 cursor-pointer group">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold">Do you offer post-launch support?</h4>
+                        <i class="fas fa-chevron-down text-slate-500 group-hover:text-primary transition-all"></i>
+                    </div>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="pt-4 text-slate-400">Yes, I provide 30 days of free support for any technical issues or minor updates. Extended maintenance plans are also available.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card p-6 cursor-pointer group">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold">Will my website be mobile-friendly?</h4>
+                        <i class="fas fa-chevron-down text-slate-500 group-hover:text-primary transition-all"></i>
+                    </div>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="pt-4 text-slate-400">Absolutely. Every website I build is "Mobile-First," meaning it will look and perform perfectly on smartphones, tablets, and desktops.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <h2 class="font-display text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                        Let's Build Your <br>
+                        <span class="text-primary">Digital Future.</span>
+                    </h2>
+                    <p class="text-xl text-slate-400 mb-12">Have a project in mind? Send a message and let's turn your ideas into reality.</p>
+                    
+                    <div class="space-y-6">
+                        <a href="mailto:sahiljangra.web@gmail.com" class="flex items-center gap-6 p-6 glass-card hover:border-primary transition-all group">
+                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl group-hover:bg-primary group-hover:text-white transition-all">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Email Me</h4>
+                                <p class="text-slate-500">sahiljangra.web@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/919996947080" target="_blank" class="flex items-center gap-6 p-6 glass-card hover:border-green-500 transition-all group">
+                            <div class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-500 text-2xl group-hover:bg-green-500 group-hover:text-white transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">WhatsApp</h4>
+                                <p class="text-slate-500">+91 99969 47080</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 md:p-12 reveal">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-400 mb-2">Name</label>
+                                <input type="text" name="name" placeholder="John Doe" class="form-input" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-400 mb-2">Email</label>
+                                <input type="email" name="email" placeholder="john@example.com" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-400 mb-2">Country</label>
+                                <select name="country" class="form-input" required>
+                                    <option value="" disabled selected class="bg-surface">Select Country</option>
+                                    <option value="United States" class="bg-surface">United States</option>
+                                    <option value="United Kingdom" class="bg-surface">United Kingdom</option>
+                                    <option value="India" class="bg-surface">India</option>
+                                    <option value="Canada" class="bg-surface">Canada</option>
+                                    <option value="Australia" class="bg-surface">Australia</option>
+                                    <option value="Germany" class="bg-surface">Germany</option>
+                                    <option value="France" class="bg-surface">France</option>
+                                    <option value="United Arab Emirates" class="bg-surface">United Arab Emirates</option>
+                                    <option value="Singapore" class="bg-surface">Singapore</option>
+                                    <option value="Japan" class="bg-surface">Japan</option>
+                                    <option value="Afghanistan" class="bg-surface">Afghanistan</option>
+                                    <option value="Albania" class="bg-surface">Albania</option>
+                                    <option value="Algeria" class="bg-surface">Algeria</option>
+                                    <option value="Andorra" class="bg-surface">Andorra</option>
+                                    <option value="Angola" class="bg-surface">Angola</option>
+                                    <option value="Argentina" class="bg-surface">Argentina</option>
+                                    <option value="Armenia" class="bg-surface">Armenia</option>
+                                    <option value="Austria" class="bg-surface">Austria</option>
+                                    <option value="Azerbaijan" class="bg-surface">Azerbaijan</option>
+                                    <option value="Bahamas" class="bg-surface">Bahamas</option>
+                                    <option value="Bahrain" class="bg-surface">Bahrain</option>
+                                    <option value="Bangladesh" class="bg-surface">Bangladesh</option>
+                                    <option value="Barbados" class="bg-surface">Barbados</option>
+                                    <option value="Belarus" class="bg-surface">Belarus</option>
+                                    <option value="Belgium" class="bg-surface">Belgium</option>
+                                    <option value="Belize" class="bg-surface">Belize</option>
+                                    <option value="Benin" class="bg-surface">Benin</option>
+                                    <option value="Bhutan" class="bg-surface">Bhutan</option>
+                                    <option value="Bolivia" class="bg-surface">Bolivia</option>
+                                    <option value="Bosnia and Herzegovina" class="bg-surface">Bosnia and Herzegovina</option>
+                                    <option value="Botswana" class="bg-surface">Botswana</option>
+                                    <option value="Brazil" class="bg-surface">Brazil</option>
+                                    <option value="Brunei" class="bg-surface">Brunei</option>
+                                    <option value="Bulgaria" class="bg-surface">Bulgaria</option>
+                                    <option value="Burkina Faso" class="bg-surface">Burkina Faso</option>
+                                    <option value="Burundi" class="bg-surface">Burundi</option>
+                                    <option value="Cambodia" class="bg-surface">Cambodia</option>
+                                    <option value="Cameroon" class="bg-surface">Cameroon</option>
+                                    <option value="Cape Verde" class="bg-surface">Cape Verde</option>
+                                    <option value="Central African Republic" class="bg-surface">Central African Republic</option>
+                                    <option value="Chad" class="bg-surface">Chad</option>
+                                    <option value="Chile" class="bg-surface">Chile</option>
+                                    <option value="China" class="bg-surface">China</option>
+                                    <option value="Colombia" class="bg-surface">Colombia</option>
+                                    <option value="Comoros" class="bg-surface">Comoros</option>
+                                    <option value="Congo" class="bg-surface">Congo</option>
+                                    <option value="Costa Rica" class="bg-surface">Costa Rica</option>
+                                    <option value="Croatia" class="bg-surface">Croatia</option>
+                                    <option value="Cuba" class="bg-surface">Cuba</option>
+                                    <option value="Cyprus" class="bg-surface">Cyprus</option>
+                                    <option value="Czech Republic" class="bg-surface">Czech Republic</option>
+                                    <option value="Denmark" class="bg-surface">Denmark</option>
+                                    <option value="Djibouti" class="bg-surface">Djibouti</option>
+                                    <option value="Dominica" class="bg-surface">Dominica</option>
+                                    <option value="Dominican Republic" class="bg-surface">Dominican Republic</option>
+                                    <option value="Ecuador" class="bg-surface">Ecuador</option>
+                                    <option value="Egypt" class="bg-surface">Egypt</option>
+                                    <option value="El Salvador" class="bg-surface">El Salvador</option>
+                                    <option value="Equatorial Guinea" class="bg-surface">Equatorial Guinea</option>
+                                    <option value="Eritrea" class="bg-surface">Eritrea</option>
+                                    <option value="Estonia" class="bg-surface">Estonia</option>
+                                    <option value="Ethiopia" class="bg-surface">Ethiopia</option>
+                                    <option value="Fiji" class="bg-surface">Fiji</option>
+                                    <option value="Finland" class="bg-surface">Finland</option>
+                                    <option value="Gabon" class="bg-surface">Gabon</option>
+                                    <option value="Gambia" class="bg-surface">Gambia</option>
+                                    <option value="Georgia" class="bg-surface">Georgia</option>
+                                    <option value="Ghana" class="bg-surface">Ghana</option>
+                                    <option value="Greece" class="bg-surface">Greece</option>
+                                    <option value="Grenada" class="bg-surface">Grenada</option>
+                                    <option value="Guatemala" class="bg-surface">Guatemala</option>
+                                    <option value="Guinea" class="bg-surface">Guinea</option>
+                                    <option value="Guyana" class="bg-surface">Guyana</option>
+                                    <option value="Haiti" class="bg-surface">Haiti</option>
+                                    <option value="Honduras" class="bg-surface">Honduras</option>
+                                    <option value="Hungary" class="bg-surface">Hungary</option>
+                                    <option value="Iceland" class="bg-surface">Iceland</option>
+                                    <option value="Indonesia" class="bg-surface">Indonesia</option>
+                                    <option value="Iran" class="bg-surface">Iran</option>
+                                    <option value="Iraq" class="bg-surface">Iraq</option>
+                                    <option value="Ireland" class="bg-surface">Ireland</option>
+                                    <option value="Israel" class="bg-surface">Israel</option>
+                                    <option value="Italy" class="bg-surface">Italy</option>
+                                    <option value="Jamaica" class="bg-surface">Jamaica</option>
+                                    <option value="Jordan" class="bg-surface">Jordan</option>
+                                    <option value="Kazakhstan" class="bg-surface">Kazakhstan</option>
+                                    <option value="Kenya" class="bg-surface">Kenya</option>
+                                    <option value="Kuwait" class="bg-surface">Kuwait</option>
+                                    <option value="Kyrgyzstan" class="bg-surface">Kyrgyzstan</option>
+                                    <option value="Laos" class="bg-surface">Laos</option>
+                                    <option value="Latvia" class="bg-surface">Latvia</option>
+                                    <option value="Lebanon" class="bg-surface">Lebanon</option>
+                                    <option value="Lesotho" class="bg-surface">Lesotho</option>
+                                    <option value="Liberia" class="bg-surface">Liberia</option>
+                                    <option value="Libya" class="bg-surface">Libya</option>
+                                    <option value="Lithuania" class="bg-surface">Lithuania</option>
+                                    <option value="Luxembourg" class="bg-surface">Luxembourg</option>
+                                    <option value="Madagascar" class="bg-surface">Madagascar</option>
+                                    <option value="Malawi" class="bg-surface">Malawi</option>
+                                    <option value="Malaysia" class="bg-surface">Malaysia</option>
+                                    <option value="Maldives" class="bg-surface">Maldives</option>
+                                    <option value="Other" class="bg-surface">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-400 mb-2">Budget</label>
+                                <select name="budget" class="form-input" required>
+                                    <option value="" disabled selected class="bg-surface">Select Budget</option>
+                                    <option value="80-150" class="bg-surface">$80 - $150</option>
+                                    <option value="150-300" class="bg-surface">$150 - $300</option>
+                                    <option value="300-600" class="bg-surface">$300 - $600</option>
+                                    <option value="600+" class="bg-surface">$600+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-400 mb-2">Phone Number</label>
+                                <input type="tel" name="phone" placeholder="+1 555 123 4567" class="form-input" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-400 mb-2">Project Topic</label>
+                                <select name="topic" class="form-input" required>
+                                    <option value="" disabled selected class="bg-surface">Select Topic</option>
+                                    <option value="Business Website" class="bg-surface">Business Website</option>
+                                    <option value="Portfolio Website" class="bg-surface">Portfolio Website</option>
+                                    <option value="Landing Page" class="bg-surface">Landing Page</option>
+                                    <option value="E-Commerce Store" class="bg-surface">E-Commerce Store</option>
+                                    <option value="Custom Web Application" class="bg-surface">Custom Web Application</option>
+                                    <option value="Website Redesign" class="bg-surface">Website Redesign</option>
+                                    <option value="UI/UX Design" class="bg-surface">UI/UX Design</option>
+                                    <option value="SEO Optimization" class="bg-surface">SEO Optimization</option>
+                                    <option value="Maintenance & Support" class="bg-surface">Maintenance & Support</option>
+                                    <option value="Other" class="bg-surface">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-400 mb-2">Message</label>
+                            <textarea name="message" rows="5" placeholder="Tell me about your project..." class="form-input" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-5 bg-primary text-white rounded-xl font-bold text-lg hover:bg-secondary transition-all transform hover:scale-[1.02] shadow-xl shadow-primary/20">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10 bg-black/50">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div>
+                    <a href="#" class="text-2xl font-bold font-display tracking-tight text-white mb-2 block">
+                        SAHIL<span class="text-primary">.TOP</span>
+                    </a>
+                    <p class="text-slate-500 text-sm">Premium Web Solutions for the Modern Era.</p>
+                </div>
+                <div class="flex gap-8">
+                    <a href="https://github.com/KRYZO-MINE" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-github text-xl"></i></a>
+                    <a href="https://instagram.com/brokedplayer" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600 uppercase tracking-widest">
+                <p>© <span id="year">2026</span> Sahil Jangra. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/919996947080" target="_blank" class="fixed bottom-28 right-8 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <span class="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20"></span>
+    </a>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTop" class="fixed bottom-44 right-9 w-12 h-12 bg-primary/80 backdrop-blur-md text-white rounded-full flex items-center justify-center shadow-2xl opacity-0 translate-y-20 transition-all duration-500 z-50 hover:scale-110 hover:bg-primary">
+        <i class="fas fa-arrow-up text-sm"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
